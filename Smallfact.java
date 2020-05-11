@@ -1,6 +1,7 @@
 import java.util.*;
 import java.lang.*;
 import java.io.*;
+import java.math.*;
 
 class Smallfact {
 
@@ -9,19 +10,16 @@ class Smallfact {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter out = new PrintWriter(System.out); 
         int t = Integer.parseInt(br.readLine());
-        int [] arr =new int[t];
         while(t!=0){
             int x =Integer.parseInt(br.readLine());
-            int fact=1;
+            BigInteger fact= new BigInteger("1");
             //if(x==)
             while(x>=1){
-                fact=fact*x;
+                fact=fact.multiply(BigInteger.valueOf(x));
                 x--;
-                
             }
             t--;
-            
-            //out.println(fact);
+            out.println(fact);
             out.flush();
         }
         out.close();
